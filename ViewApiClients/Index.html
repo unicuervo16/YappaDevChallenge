@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<style>
+    .container {
+        position: relative;
+    }
+    
+    .v-line {
+        border-left: thick solid #617eff;
+        height: 100%;
+        left: 50%;
+        position: absolute;
+    }
+    #contenedorGrafico {
+        transition: height 0.5s ease;
+    }
+    
+    .collapse {
+        display: none;
+        transition: height 0.5s ease;
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mt-2 text-center">
+                <h2 id="toggleGrafico" style="cursor:pointer;">Clientes por Año</h2>
+                <div id="contenedorGrafico" class="collapse">
+                    <canvas id="clientesPorAnio"></canvas>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <h1 class="mb-0" style="margin-right: 20px;">Lista de Clientes</h1>
+                <div class="flex-fill ms-3">
+                    <input type="text" class="form-control" id="filtroNombre" onkeyup="filtrarClientes()"
+                           placeholder="Filtrar por nombre">
+                </div>
+            </div>
+            
+            <button class="btn btn-success" onclick="mostrarFormularioAgregar()">Agregar Cliente <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+              </svg></button>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="clientes-lista">
+                <!-- La lista de clientes -->
+            </div>
+            <div class="v-line">
+            </div>
+            <div class="col-md-6">
+                <div id="agregar-cliente" class="text-center" style="display: none;">
+                    <h2>Agregar Cliente</h2>
+                    <div class="form-group">
+                        <label for="nombreAgregar">Nombre</label>
+                        <input type="text" class="form-control" id="nombreAgregar" required maxlength="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoAgregar">Apellido</label>
+                        <input type="text" class="form-control" id="apellidoAgregar" required maxlength="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cuilAgregar">CUIL</label>
+                        <input type="text" class="form-control" id="cuilAgregar" required maxlength="20" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimientoAgregar">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimientoAgregar" />
+                    </div>
+                    <div class="form-group">
+                        <label for="domicilioAgregar">Domicilio</label>
+                        <input type="text" class="form-control" id="domicilioAgregar" maxlength="50" />
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoAgregar">Teléfono Celular</label>
+                        <input type="text" class="form-control" id="telefonoAgregar" maxlength="20" />
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAgregar">Email</label>
+                        <input type="email" class="form-control" id="emailAgregar" />
+                    </div>
+                    <button onclick="insert()" class="btn btn-success">Agregar</button>
+                </div>
+
+                <div id="detalle-cliente" class="text-center" style="align-items:start;">
+                    <!-- Los detalles del cliente-->
+                </div>
+
+                <div id="formulario-editar" class="text-center">
+                    <!-- El formulario para editar el cliente-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function toggleGrafico() {
+            var contenedor = document.getElementById('contenedorGrafico');
+            if (contenedor.classList.contains('collapse')) {
+                contenedor.classList.remove('collapse');
+            } else {
+                contenedor.classList.add('collapse');
+            }
+        }
+        document.getElementById('toggleGrafico').addEventListener('click', toggleGrafico);
+    </script>
+<script>function generarGraficoClientesPorAnio(clientes) {
+    const clientesPorAnio = {};
+    clientes.forEach(cliente => {
+        const año = new Date(cliente.fechaNacimiento).getFullYear();
+        if (clientesPorAnio[año]) {
+            clientesPorAnio[año]++;
+        } else {
+            clientesPorAnio[año] = 1;
+        }
+    });
+
+    const data = {
+        labels: Object.keys(clientesPorAnio),
+        datasets: [{
+            label: 'Número de Clientes',
+            data: Object.values(clientesPorAnio),
+            backgroundColor: 'rgba(0, 123, 255, 0.5)',
+            borderColor: 'rgba(0, 123, 255, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const config = {
+        type: 'line', // Tipo de gráfico
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        callback: function(value) {
+                            if (value % 1 === 0) {
+                                return value;
+                            }
+                        }
+                    }
+                }
+            },
+            plugins: {
+            }
+        }
+    };
+    
+
+    // Crear el gráfico
+    new Chart(document.getElementById('clientesPorAnio'), config);
+}
+</script>
+    <script>
+        //Graficos
+        fetch('https://localhost:7133/api/Client/GetAll')
+    .then(response => response.json())
+    .then(data => {
+        mostrarClientes(data);
+        generarGraficoClientesPorAnio(data);
+    })
+    .catch(error => console.error('Error:', error));
+
+
+
+        //Escuchamos el codument0
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('https://localhost:7133/api/Client/GetAll')
+                .then(response => response.json())
+                .then(data => mostrarClientes(data))
+                .catch(error => console.error('Error:', error));
+        });
+
+        //ocultamos los formularios
+        function ocultarSecciones() {
+            document.getElementById('agregar-cliente').style.display = 'none';
+            document.getElementById('detalle-cliente').style.display = 'none';
+            document.getElementById('formulario-editar').style.display = 'none';
+        }
+
+        //Mostramos el formulario de agregar
+        function mostrarFormularioAgregar() {
+            ocultarSecciones();
+            document.getElementById('agregar-cliente').style.display = 'block';
+        }
+
+        //Mostramos los clientes
+        function mostrarClientes(clientes) {
+            const lista = document.getElementById('clientes-lista');
+            lista.innerHTML = '';
+            clientes.forEach(cliente => {
+                lista.innerHTML += `
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#EA51FF;">${cliente.nombres} ${cliente.apellidos}</h5>
+                            <p class="card-text"><strong>Correo:</strong> ${cliente.email}</p>
+                            <p class="card-text"><strong>CUIL:</strong> ${cliente.cuit}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary" style="margin-right: 15px;" onclick="mostrarDetalle(${cliente.id})">Detalles <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                                        <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+                                      </svg></button>
+                                    <button class="btn btn-outline-success" onclick="editarCliente(${cliente.id})">Editar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                      </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+        }
+        
+
+        //Mostramos los detalles del cliente por Id
+        function mostrarDetalle(id) {
+            ocultarSecciones();
+            const detalleDiv = document.getElementById('detalle-cliente');
+            detalleDiv.style.display = 'block';
+            fetch(`https://localhost:7133/api/Client/${id}`)
+                .then(response => response.json())
+                .then(cliente => {
+                    const detalleDiv = document.getElementById('detalle-cliente');
+                    const fechaNacimiento = new Date(cliente.fechaNacimiento);
+                    const edad = calcularEdad(fechaNacimiento);
+                    detalleDiv.innerHTML = `
+                    
+                <div style="align-items:start; text-align:start;margin-left: 30px;">
+                        <h3 class="text-center">Detalles del Cliente</h3>
+                        <p><strong>Nombre:</strong> ${cliente.nombres} ${cliente.apellidos}</p>
+                        <p><strong>Fecha de Nacimiento:</strong> ${fechaNacimiento.toLocaleDateString()} - Edad actual: ${edad}</p>
+                        <p><strong>CUIL:</strong> ${cliente.cuit}</p>
+                        <p><strong>Domicilio:</strong> ${cliente.domicilio || 'No especificado'}</p>
+                        <p><strong>Teléfono Celular:</strong> ${cliente.telefonoCelular || 'No especificado'}</p>
+                        <p><strong>Email:</strong> ${cliente.email || 'No especificado'}</p>
+                </div>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+            filtrarClientes();
+        }
+
+        //Calculo la edad
+        function calcularEdad(fechaNacimiento) {
+            const hoy = new Date();
+            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                return edad - 1;
+            }
+            return edad;
+        }
+
+        //Editamos segun Id
+        function editarCliente(id) {
+            ocultarSecciones();
+            const formulario = document.getElementById('formulario-editar');
+            formulario.style.display = 'block';
+            fetch(`https://localhost:7133/api/Client/${id}`)
+                .then(response => response.json())
+                .then(cliente => {
+                    const formulario = document.getElementById('formulario-editar');
+                    formulario.innerHTML = `
+                    <h3 class="text-center">Detalles del Cliente</h3>
+                        <div class="form-group">
+                            <label for="nombreEditar">Nombre</label>
+                            <input type="text" class="form-control" id="nombreEditar" value="${cliente.nombres}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidoEditar">Apellido</label>
+                            <input type="text" class="form-control" id="apellidoEditar" value="${cliente.apellidos}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="cuilEditar">CUIL</label>
+                            <input type="text" class="form-control" id="cuilEditar" value="${cliente.cuit}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimientoEditar">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimientoEditar" value="${cliente.fechaNacimiento ? cliente.fechaNacimiento.split('T')[0] : ''}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="domicilioEditar">Domicilio</label>
+                            <input type="text" class="form-control" id="domicilioEditar" value="${cliente.domicilio || null}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoEditar">Teléfono Celular</label>
+                            <input type="text" class="form-control" id="telefonoEditar" value="${cliente.telefonoCelular || null}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailEditar">Email</label>
+                            <input type="email" class="form-control" id="emailEditar" value="${cliente.email}" />
+                        </div>
+                        <button onclick="actualizarCliente(${cliente.id})" class="btn btn-success">Actualizar</button>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        //Actualizamos el cliente
+        function actualizarCliente(id) {
+            const clienteActualizado = {
+                ID: id,
+                nombres: document.getElementById('nombreEditar').value.trim(),
+                apellidos: document.getElementById('apellidoEditar').value.trim(),
+                cuit: document.getElementById('cuilEditar').value.trim(),
+                telefonoCelular: document.getElementById('telefonoEditar').value.trim(),
+                email: document.getElementById('emailEditar').value.trim(),
+                fechaNacimiento: document.getElementById('fechaNacimientoEditar').value || null,
+                domicilio: document.getElementById('domicilioEditar').value || null
+            };
+
+            fetch(`https://localhost:7133/api/Client/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(clienteActualizado)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Cliente actualizado con éxito');
+                        fetch('https://localhost:7133/api/Client/GetAll')
+                            .then(response => response.json())
+                            .then(data => mostrarClientes(data))
+                            .catch(error => console.error('Error al obtener clientes:', error));
+                    } else {
+                        throw new Error('Error al actualizar el cliente');
+                    }
+                })
+                .catch(error => console.error('Error al actualizar el cliente:', error));
+        }
+
+        //Filtro por nombre
+        function filtrarClientes() {
+            const filtro = document.getElementById('filtroNombre').value.trim().toLowerCase();
+            const clientes = [...document.querySelectorAll('.card')];
+
+            clientes.forEach(cliente => {
+                const nombreCompleto = cliente.querySelector('.card-title').innerText.toLowerCase();
+                if (nombreCompleto.includes(filtro)) {
+                    cliente.style.display = 'block';
+                } else {
+                    cliente.style.display = 'none';
+                }
+            });
+        }
+
+        //Insertar clientes
+        function insert() {
+            const nombres = document.getElementById('nombreAgregar').value.trim();
+            const apellidos = document.getElementById('apellidoAgregar').value.trim();
+            const cuit = document.getElementById('cuilAgregar').value.trim();
+            const telefonoCelular = document.getElementById('telefonoAgregar').value.trim();
+            const email = document.getElementById('emailAgregar').value.trim();
+
+            if (!nombres || !apellidos || !cuit || !telefonoCelular || !email) {
+                alert('Todos los campos obligatorios deben ser llenados.');
+                return;
+            }
+
+            if (cuit.length > 20) {
+                alert('El CUIT no debe exceder los 20 caracteres.');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('El email debe contener un @.');
+                return;
+            }
+
+            const cliente = {
+                nombres: nombres,
+                apellidos: apellidos,
+                cuit: cuit,
+                telefonoCelular: telefonoCelular,
+                email: email,
+                fechaNacimiento: document.getElementById('fechaNacimientoAgregar').value || null,
+                domicilio: document.getElementById('domicilioAgregar').value || null
+            };
+
+            fetch('https://localhost:7133/api/Client/Insert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(cliente)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al insertar el cliente');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Cliente insertado con éxito');
+                    mostrarClientes(data);
+                })
+        }        
+    </script>
+</body>
+
+</html>

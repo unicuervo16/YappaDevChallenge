@@ -1,0 +1,237 @@
+2024-03-26 19:18:27.143 -03:00 [INF] Now listening on: https://localhost:7133
+2024-03-26 19:18:27.206 -03:00 [INF] Now listening on: http://localhost:5150
+2024-03-26 19:18:27.212 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 19:18:27.215 -03:00 [INF] Hosting environment: Development
+2024-03-26 19:18:27.215 -03:00 [INF] Content root path: J:\C# .NET\Proyectos\Repos\YappaDevChallenge\YappaDevChallenge\
+2024-03-26 19:18:35.770 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:18:35.770 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:18:35.854 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 96.2900ms
+2024-03-26 19:18:35.951 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:18:36.262 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 310.8785ms
+2024-03-26 19:18:36.375 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:18:36.691 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 934.9960ms
+2024-03-26 19:18:36.755 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:18:36.761 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 6.3894ms
+2024-03-26 19:18:36.817 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 441.9366ms
+2024-03-26 19:18:37.158 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:18:37.192 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.1145ms
+2024-03-26 19:18:37.369 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:18:37.383 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.5299ms
+2024-03-26 19:18:42.802 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/GetAll - -
+2024-03-26 19:18:42.819 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:18:42.858 -03:00 [INF] Route matched with {action = "GetAll", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[YappaDevChallenge.Model.Client]]] GetAll() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:18:44.423 -03:00 [INF] Entity Framework Core 6.0.28 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-03-26 19:18:46.299 -03:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Apellidos], [c].[CUIT], [c].[Domicilio], [c].[Email], [c].[FechaNacimiento], [c].[Nombres], [c].[TelefonoCelular]
+FROM [Clientes] AS [c]
+2024-03-26 19:18:46.569 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[YappaDevChallenge.Model.Client, YappaDevChallenge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 19:18:46.601 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge) in 3727.0163ms
+2024-03-26 19:18:46.608 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:18:46.635 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/GetAll - - - 200 - application/json;+charset=utf-8 3833.8997ms
+2024-03-26 19:19:56.874 -03:00 [INF] Now listening on: https://localhost:7133
+2024-03-26 19:19:56.993 -03:00 [INF] Now listening on: http://localhost:5150
+2024-03-26 19:19:57.007 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 19:19:57.011 -03:00 [INF] Hosting environment: Development
+2024-03-26 19:19:57.013 -03:00 [INF] Content root path: J:\C# .NET\Proyectos\Repos\YappaDevChallenge\YappaDevChallenge\
+2024-03-26 19:20:07.168 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:20:07.370 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:20:07.370 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:20:07.430 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 57.0507ms
+2024-03-26 19:20:07.635 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 264.8419ms
+2024-03-26 19:20:07.728 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:20:07.904 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 742.7313ms
+2024-03-26 19:20:07.960 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:20:07.965 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 5.2470ms
+2024-03-26 19:20:08.025 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 297.2799ms
+2024-03-26 19:20:08.172 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:20:08.199 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.1066ms
+2024-03-26 19:20:08.337 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:20:08.345 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.6170ms
+2024-03-26 19:20:10.208 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:20:10.210 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 2.1669ms
+2024-03-26 19:20:10.434 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:20:10.452 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.8102ms
+2024-03-26 19:20:10.757 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:20:10.769 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.3656ms
+2024-03-26 19:20:23.394 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7133/api/Client/Insert application/json 169
+2024-03-26 19:20:23.411 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge)'
+2024-03-26 19:20:23.455 -03:00 [INF] Route matched with {action = "Insert", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[YappaDevChallenge.Model.Client]] Insert(YappaDevChallenge.Model.Client) on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:20:23.736 -03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-03-26 19:20:23.754 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge) in 286.2833ms
+2024-03-26 19:20:23.769 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge)'
+2024-03-26 19:20:23.781 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7133/api/Client/Insert application/json 169 - 400 - application/problem+json;+charset=utf-8 386.8645ms
+2024-03-26 19:20:36.433 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7133/api/Client/Insert application/json 192
+2024-03-26 19:20:36.438 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge)'
+2024-03-26 19:20:36.442 -03:00 [INF] Route matched with {action = "Insert", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[YappaDevChallenge.Model.Client]] Insert(YappaDevChallenge.Model.Client) on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:20:37.422 -03:00 [INF] Entity Framework Core 6.0.28 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-03-26 19:20:38.447 -03:00 [INF] Executed DbCommand (119ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 20), @p2='?' (Size = 50), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 50), @p6='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Clientes] ([Apellidos], [CUIT], [Domicilio], [Email], [FechaNacimiento], [Nombres], [TelefonoCelular])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [ID]
+FROM [Clientes]
+WHERE @@ROWCOUNT = 1 AND [ID] = scope_identity();
+2024-03-26 19:20:38.609 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'YappaDevChallenge.Model.Client'.
+2024-03-26 19:20:38.644 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge) in 2198.0083ms
+2024-03-26 19:20:38.650 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.Insert (YappaDevChallenge)'
+2024-03-26 19:20:38.663 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7133/api/Client/Insert application/json 192 - 201 - application/json;+charset=utf-8 2230.0125ms
+2024-03-26 19:22:15.666 -03:00 [INF] Now listening on: https://localhost:7133
+2024-03-26 19:22:15.771 -03:00 [INF] Now listening on: http://localhost:5150
+2024-03-26 19:22:15.780 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 19:22:15.783 -03:00 [INF] Hosting environment: Development
+2024-03-26 19:22:15.784 -03:00 [INF] Content root path: J:\C# .NET\Proyectos\Repos\YappaDevChallenge\YappaDevChallenge\
+2024-03-26 19:22:25.922 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:22:26.165 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:22:26.178 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:22:26.259 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 92.0519ms
+2024-03-26 19:22:26.406 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 235.1081ms
+2024-03-26 19:22:26.489 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:22:26.682 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 770.6598ms
+2024-03-26 19:22:26.738 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:22:26.742 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 3.0742ms
+2024-03-26 19:22:26.806 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 317.2357ms
+2024-03-26 19:22:26.950 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:22:26.982 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.0027ms
+2024-03-26 19:22:27.112 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:22:27.122 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.6648ms
+2024-03-26 19:22:31.791 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/GetAll - -
+2024-03-26 19:22:31.810 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:22:31.847 -03:00 [INF] Route matched with {action = "GetAll", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[YappaDevChallenge.Model.Client]]] GetAll() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:22:33.388 -03:00 [INF] Entity Framework Core 6.0.28 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-03-26 19:22:34.989 -03:00 [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Apellidos], [c].[CUIT], [c].[Domicilio], [c].[Email], [c].[FechaNacimiento], [c].[Nombres], [c].[TelefonoCelular]
+FROM [Clientes] AS [c]
+2024-03-26 19:22:35.311 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[YappaDevChallenge.Model.Client, YappaDevChallenge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 19:22:35.369 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge) in 3494.517ms
+2024-03-26 19:22:35.375 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:22:35.410 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/GetAll - - - 200 - application/json;+charset=utf-8 3619.6326ms
+2024-03-26 19:22:53.224 -03:00 [INF] Request starting HTTP/2 PUT https://localhost:7133/api/Client/3 application/json 203
+2024-03-26 19:22:53.230 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge)'
+2024-03-26 19:22:53.248 -03:00 [INF] Route matched with {action = "Update", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, YappaDevChallenge.Model.Client) on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:22:53.320 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-03-26 19:22:53.324 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge) in 73.3474ms
+2024-03-26 19:22:53.327 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge)'
+2024-03-26 19:22:53.333 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:7133/api/Client/3 application/json 203 - 400 - application/problem+json;+charset=utf-8 109.1253ms
+2024-03-26 19:22:54.979 -03:00 [INF] Request starting HTTP/2 PUT https://localhost:7133/api/Client/3 application/json 203
+2024-03-26 19:22:54.981 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge)'
+2024-03-26 19:22:54.986 -03:00 [INF] Route matched with {action = "Update", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, YappaDevChallenge.Model.Client) on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:22:54.997 -03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-03-26 19:22:55.001 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge) in 10.026ms
+2024-03-26 19:22:55.004 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.Update (YappaDevChallenge)'
+2024-03-26 19:22:55.006 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:7133/api/Client/3 application/json 203 - 400 - application/problem+json;+charset=utf-8 27.4794ms
+2024-03-26 19:23:07.892 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/GetAll - -
+2024-03-26 19:23:07.895 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:23:07.896 -03:00 [INF] Route matched with {action = "GetAll", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[YappaDevChallenge.Model.Client]]] GetAll() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:23:07.909 -03:00 [INF] Entity Framework Core 6.0.28 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.28' with options: None
+2024-03-26 19:23:07.922 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[ID], [c].[Apellidos], [c].[CUIT], [c].[Domicilio], [c].[Email], [c].[FechaNacimiento], [c].[Nombres], [c].[TelefonoCelular]
+FROM [Clientes] AS [c]
+2024-03-26 19:23:07.926 -03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[YappaDevChallenge.Model.Client, YappaDevChallenge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 19:23:07.928 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge) in 29.3384ms
+2024-03-26 19:23:07.930 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetAll (YappaDevChallenge)'
+2024-03-26 19:23:07.932 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/GetAll - - - 200 - application/json;+charset=utf-8 39.9355ms
+2024-03-26 19:24:20.340 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:24:20.375 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 34.4025ms
+2024-03-26 19:24:20.453 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:24:20.453 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:24:20.456 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 2.9306ms
+2024-03-26 19:24:20.468 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.6170ms
+2024-03-26 19:27:14.458 -03:00 [INF] Now listening on: https://localhost:7133
+2024-03-26 19:27:14.507 -03:00 [INF] Now listening on: http://localhost:5150
+2024-03-26 19:27:14.514 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 19:27:14.517 -03:00 [INF] Hosting environment: Development
+2024-03-26 19:27:14.520 -03:00 [INF] Content root path: J:\C# .NET\Proyectos\Repos\YappaDevChallenge\YappaDevChallenge\
+2024-03-26 19:27:20.779 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:27:20.985 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:27:20.985 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:27:21.039 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 44.7808ms
+2024-03-26 19:27:21.298 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 312.9329ms
+2024-03-26 19:27:21.405 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:27:21.562 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 790.6653ms
+2024-03-26 19:27:21.621 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:27:21.626 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 5.2559ms
+2024-03-26 19:27:21.687 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 281.0430ms
+2024-03-26 19:27:21.845 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:27:21.881 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.9723ms
+2024-03-26 19:27:22.032 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:27:22.048 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.2087ms
+2024-03-26 19:27:27.744 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/documentation - -
+2024-03-26 19:27:27.763 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:27:27.785 -03:00 [INF] Route matched with {action = "GetDocumentation", controller = "Client"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] GetDocumentation() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:27:28.360 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-03-26 19:27:28.380 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge) in 581.8845ms
+2024-03-26 19:27:28.397 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:27:28.410 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/documentation - - - 200 - application/json;+charset=utf-8 666.4795ms
+2024-03-26 19:33:55.718 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:33:55.760 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 42.8592ms
+2024-03-26 19:33:55.844 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:33:55.845 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:33:55.848 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 3.6534ms
+2024-03-26 19:33:55.861 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.3545ms
+2024-03-26 19:33:55.992 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:33:56.004 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.8453ms
+2024-03-26 19:34:00.576 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/documentation - -
+2024-03-26 19:34:00.578 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:34:00.581 -03:00 [INF] Route matched with {action = "GetDocumentation", controller = "Client"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] GetDocumentation() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:34:00.595 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-03-26 19:34:00.599 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge) in 15.5937ms
+2024-03-26 19:34:00.601 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:34:00.603 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/documentation - - - 200 - application/json;+charset=utf-8 27.2023ms
+2024-03-26 19:34:20.099 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:34:20.123 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 24.7129ms
+2024-03-26 19:34:20.197 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:34:20.197 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:34:20.201 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 4.3540ms
+2024-03-26 19:34:20.210 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.3564ms
+2024-03-26 19:34:20.313 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:34:20.329 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Client/documentation" for actions - YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge),YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-03-26 19:34:20.383 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 70.2142ms
+2024-03-26 19:34:27.634 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:34:27.640 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 5.9481ms
+2024-03-26 19:34:27.710 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:34:27.710 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:34:27.715 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 5.2574ms
+2024-03-26 19:34:27.724 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.1575ms
+2024-03-26 19:34:27.834 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:34:27.838 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Client/documentation" for actions - YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge),YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-03-26 19:34:27.846 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 11.2877ms
+2024-03-26 19:34:36.499 -03:00 [INF] Now listening on: https://localhost:7133
+2024-03-26 19:34:36.647 -03:00 [INF] Now listening on: http://localhost:5150
+2024-03-26 19:34:36.655 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 19:34:36.657 -03:00 [INF] Hosting environment: Development
+2024-03-26 19:34:36.659 -03:00 [INF] Content root path: J:\C# .NET\Proyectos\Repos\YappaDevChallenge\YappaDevChallenge\
+2024-03-26 19:34:46.004 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/index.html - -
+2024-03-26 19:34:46.162 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:34:46.162 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:34:46.222 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 38.0796ms
+2024-03-26 19:34:46.488 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 326.5945ms
+2024-03-26 19:34:46.596 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:34:46.783 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 786.2044ms
+2024-03-26 19:34:46.833 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 19:34:46.835 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_framework/aspnetcore-browser-refresh.js - - - 200 12366 application/javascript;+charset=utf-8 2.4175ms
+2024-03-26 19:34:46.930 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 333.7917ms
+2024-03-26 19:34:47.088 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/_vs/browserLink - -
+2024-03-26 19:34:47.133 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.7564ms
+2024-03-26 19:34:47.299 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-26 19:34:47.309 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.5053ms
+2024-03-26 19:34:50.772 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7133/api/Client/documentation - -
+2024-03-26 19:34:50.825 -03:00 [INF] Executing endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:34:50.970 -03:00 [INF] Route matched with {action = "GetDocumentation", controller = "Client"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] GetDocumentation() on controller YappaDevChallenge.Controllers.ClientController (YappaDevChallenge).
+2024-03-26 19:34:51.390 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-03-26 19:34:51.417 -03:00 [INF] Executed action YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge) in 430.6975ms
+2024-03-26 19:34:51.442 -03:00 [INF] Executed endpoint 'YappaDevChallenge.Controllers.ClientController.GetDocumentation (YappaDevChallenge)'
+2024-03-26 19:34:51.454 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7133/api/Client/documentation - - - 200 - application/json;+charset=utf-8 682.2200ms
