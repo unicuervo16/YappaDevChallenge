@@ -21,12 +21,12 @@ Este proyecto consiste en una API de .NET 6 que permite realizar operaciones CRU
 ### Documentación de la API
 La API de Clientes ofrece las siguientes funcionalidades:
 
-GET /api/Client/documentation: Documentación de la API.
-GET /api/Client/GetAll: Obtiene todos los clientes.
-GET /api/Client/{id}: Obtiene un cliente por su ID.
-GET /api/Client/Search?name=value: Busca clientes por nombre o apellido.
-POST /api/Client/Insert: Crea un nuevo cliente.
-PUT /api/Client/{id}: Actualiza los datos de un cliente existente.
+- GET /api/Client/documentation: Documentación de la API.
+- GET /api/Client/GetAll: Obtiene todos los clientes.
+- GET /api/Client/{id}: Obtiene un cliente por su ID.
+- GET /api/Client/Search?name=value: Busca clientes por nombre o apellido.
+- POST /api/Client/Insert: Crea un nuevo cliente.
+- PUT /api/Client/{id}: Actualiza los datos de un cliente existente.
 
 
 ### Instalación
